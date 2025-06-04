@@ -1,0 +1,61 @@
+Pedro Augusto Moreira de Oliveira 02/09 
+Funcionalidades adicionadas:
+- banco de dados adicionado
+- site conectado ao banco de dados
+
+- cadastro funcionando: 
+• banco de dados guarda: nome, e-mail e senha
+• não dá para criar uma conta com o mesmo e-mail 2 vezes
+• os campos de senha e confirme sua senha tem que possuir as mesmas informações, caso contrário o cadastro é recusado com uma mensagem de aviso
+• após o cadastro, você é redirecionado a tela de login 
+• após o login, não é possível se cadastrar enquanto você já estiver em uma sessão, você teria que dar logout e ai sim fazer um outro cadastro
+• os campos de senha e confirme sua senha são criptografados pelo método MD5 hash, sendo assim, mesmo tendo acesso ao banco de dados, não temos como ver a senha dos usuários. 
+
+- login funcionando:
+• e-mail e senha tem que ser iguais ao do banco de dados, caso contrário o login é cancelado com uma mensagem de aviso
+• todas as páginas do site são bloqueadas enquanto você não fizer um login (index, carrinho, quem somos etc...)
+• caso você já tenha feito login, não será possível fazer outro na mesma sessão, caso tentar você sempre será redirecionado a página de perfil
+
+- página de perfil adicionada (só aparece caso você já esteja logado no site)
+• nela mostra seu nome completo e e-mail utilizado na conta
+• botão de excluir conta dentro da página de perfil
+
+- alterações nos icones do site:
+• icone da pessoa virou o icone de login
+• icone da seta virou o icone de logout
+• o cadastro não ficará mais no header, por falta de necessidade, caso a pessoa queira se registrar é só ir em login e clicar no link "Caso não tenha uma conta, faça o cadastro aqui".
+
+Pedro Augusto Moreira de Oliveira 03/09 
+Funcionalidades adicionadas:
+-index.php/página inicial conectada ao banco de dados
+• produtos aparecem na tela apenas se estes estiverem cadastrados no banco de dados
+• os popups foram adaptados/preservados e continuam funcionando normalmente após a atualização
+• as informações guardadas dos produtos no banco são: imagem, preço, nome, detalhes e id.
+
+Pedro Augusto Moreira de Oliveira 11/09 
+Funcionalidades adicionadas:
+-banco de dados foi alterado: tabela "products" contém uma nova coluna chamada de "category"
+• assim, é possível fitrar os itens da tabela pela sua categoria/tipo
+
+-index.php/página inicial contém uma barra de navegação, agora, funcional
+• ou seja, podemos filtrar os produtos desejados a partir de seu tipo (monitor, mouse, teclado, perífericos no geral, pc...).
+• ao clicar em qualquer um dos itens da barra de navegação, o site apenas mostrará produtos de determinado tipo escolhido.
+
+-a barra de busca inserida no "header", agora funciona normalmente
+• ou seja, se o usuário escrever palavras-chaves ao buscar um determinado produto, a barra de busca armazenará o conteúdo escrito pelo mesmo e irá comparar e mostrar todos os resultados
+que sejam iguais a sua pesquisa
+
+-alteração/correção no modo em que os icones aparecem no "header"
+• os botões não possuem uma "área clicável" tão grande quanto anteriormente
+• todos os icones aparecem no final na barra de navegação
+
+-alteração nos botões e barra de busca em determinadas páginas
+• algumas páginas não utilizam os fatores anteriormente comentados, então estes foram removidos destas páginas específicas por falta de necessidade
+
+Pedro Augusto Moreira de Oliveira 17/09
+Funcionalidades adicionadas:
+-comprar.php/tela de pagamento conectada ao banco de dados
+• criação de uma tabela "order", agrupando todos os dados inseridos pelo usuário na tela de pagamento, junto dos produtos escolhidos pelo mesmo
+• ao clicar em comprar agora nas seções de produtos da index.php/página inicial, ou clicar em finalizar o pagamento no carrinho.php, o usuário é redirecionado ao comprar.php, onde há um formulário para que este consiga inserir seus dados para pagar e receber o produto. 
+• vale mencionar que na mesma tela, todos os produtos que o usuário adicionou no carrinho são descritos para que assim não haja enganos 
+• assim que o usuário finalize o pagamento, este recebe uma confirmação de seus dados e produtos requisitados.
